@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Having fun messing around."/><link rel="alternate" href="/atom.xml" title="Yi's blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://xiaoyu2006.github.com/page/2/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150735695-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150735695-2');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":true};
+</script>
+
+    <title>Yi's blog</title>
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Yi's blog" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Yi's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Yi's blog</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><section id="posts" class="posts"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2020/07/21/Build-your-own-blog-with-Hexo-js/">Build your own blog with Hexo.js</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-07-21
+        </span></div>
+    </header>
+
+    <div class="post-content"><p>Since lots of my classmates/friends have their own blogs, I decided to build one too with <a href="https://github.com/hexojs/hexo" target="_blank" rel="noopener">Hexo.js</a>. This guide can teach you how to build yours with Hexo.js.</p>
+<h1 id="Install-Hexo-js"><a href="#Install-Hexo-js" class="headerlink" title="Install Hexo.js"></a>Install Hexo.js</h1><ol>
+<li><p>Install <a href="https://nodejs.org/" target="_blank" rel="noopener">Node.js</a>.</p>
+</li>
+<li><p>Install <a href="https://git-scm.com/" target="_blank" rel="noopener">Git</a>.</p>
+</li>
+<li><p>Install <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo.js</a> using npm:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>Hexo is a blog framework. It generates a <a href="https://en.wikipedia.org/wiki/Static_web_page" target="_blank" rel="noopener">static website</a> from your Markdown files. It’s easy to use, extremely extendable.</p>
+</li>
+</ol>
+<h1 id="Initialize-your-blog"><a href="#Initialize-your-blog" class="headerlink" title="Initialize your blog"></a>Initialize your blog</h1><ol>
+<li><p>Run <code>hexo init</code> at where you want to create your blog. It creates a project structure like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml</span><br><span class="line">├── package.json</span><br><span class="line">├── node_modules</span><br><span class="line">├── scaffolds</span><br><span class="line">│   ├── draft.md</span><br><span class="line">│   ├── page.md</span><br><span class="line">│   └── post.md</span><br><span class="line">├── source</span><br><span class="line">│   └── _posts</span><br><span class="line">│       └── hello-world.md</span><br><span class="line">├── themes</span><br><span class="line">│   └── landscape</span><br><span class="line">└── yarn.lock</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>_config.yml</code> is a configuration file for your blog. You can edit it as you like. (<a href="https://hexo.io/docs/configuration" target="_blank" rel="noopener">https://hexo.io/docs/configuration</a>)</li>
+<li><code>package.json</code> holds various metadata relevant to the project. (Hexo’s dependencies)</li>
+<li><code>node_modules</code> is Hexo’s dependencies.</li>
+<li><code>scaffolds</code> when you create a new post, Hexo bases the new file on the scaffold.</li>
+<li><code>source</code> holds your posts, etc.</li>
+<li><code>themes</code> contains your themes for your site.<br>More info @ <a href="https://hexo.io/docs/setup" target="_blank" rel="noopener">https://hexo.io/docs/setup</a>.</li>
+</ul>
+</li>
+<li><p>Initialize a git repository as you like. The <code>.gitignore</code> file is already created.</p>
+</li>
+<li><p>To see what you have created, run <code>hexo server</code>. This will start a server at localhost (port 4000 by default).</p>
+</li>
+<li><p>Use <code>hexo new post</code> to create a new post. (e.g. <code>hexo new post &quot;Hello world&quot;</code>) <code>hexo new page</code> to create a new page. (e.g. <code>hexo new page &quot;about&quot;</code>)</p>
+</li>
+</ol>
+<h1 id="Themes"><a href="#Themes" class="headerlink" title="Themes"></a>Themes</h1><p>Open <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a>. Most themes offer a demo website and an installation guide. Following them is ok most of the time. (I use <a href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">even</a>.)</p>
+<h1 id="Optional-suggested-plugins"><a href="#Optional-suggested-plugins" class="headerlink" title="Optional suggested plugins"></a>Optional suggested plugins</h1><ol>
+<li>RSS feed is provided by <a href="https://github.com/hexojs/hexo-generator-feed" target="_blank" rel="noopener">hexo-generator-feed</a>.</li>
+<li>Sitemap is provided by <a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="noopener">hexo-generator-sitemap</a>.</li>
+</ol>
+<p>Following their instructions is ok.</p>
+<h1 id="Deploying"><a href="#Deploying" class="headerlink" title="Deploying"></a>Deploying</h1><p>To make others see your blog, we have to deploy it somewhere. Here I use <a href="https://pages.github.com/" target="_blank" rel="noopener">GitHub Pages</a> as an example.</p>
+<p>First install <a href="https://github.com/hexojs/hexo-deployer-git" target="_blank" rel="noopener">hexo-deployer-git</a>.</p>
+<h2 id="Manually"><a href="#Manually" class="headerlink" title="Manually"></a>Manually</h2><ol>
+<li><p>Modify the <code>deploy</code> section at the vey bottom of your <code>_config.yml</code> file like this:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;project&gt;</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">&lt;branch&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Whenever you want to deploy to GitHub, run <code>hexo generate &amp;&amp; hexo deploy</code>. This generates the static files and deploy them to GitHub Pages. For personal homepage (<code>*.github.io</code>), branch should be <code>master</code>.</p>
+</li>
+</ol>
+<h2 id="CD-supported-by-Travis-ci"><a href="#CD-supported-by-Travis-ci" class="headerlink" title="CD supported by Travis-ci"></a>CD supported by <a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis-ci</a></h2><p>It’s a bit tricky to use CD with Travis-ci since there is a bug in hexo-deployer-git.</p>
+<ol>
+<li><p>Generate a token for Travis-ci to access to your repo to update it. Follow this: <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token#creating-a-token" target="_blank" rel="noopener">https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token#creating-a-token</a></p>
+</li>
+<li><p>Modify the <code>deploy</code> section like this, note that we use an environment variable to store the token, but not hardcoded into the code:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span></span><br><span class="line">    <span class="attr">github:</span></span><br><span class="line">      <span class="attr">url:</span> <span class="string">https://github.com/&lt;username&gt;/&lt;username&gt;.github.io</span></span><br><span class="line">      <span class="attr">branch:</span> <span class="string">&lt;branch&gt;</span></span><br><span class="line">      <span class="attr">token:</span> <span class="string">$GH_TOKEN</span></span><br><span class="line">  <span class="attr">name:</span> <span class="string">&lt;github-username&gt;</span></span><br></pre></td></tr></table></figure>
+<p>Due to a <a href="https://github.com/hexojs/hexo-deployer-git/issues/159" target="_blank" rel="noopener">bug</a>, we cannot use a similar structure in the <code>Manually</code> section.</p>
+</li>
+<li><p>Create a <code>.travis.yml</code> at the root of your blog’s source code. It goes like this:</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">language:</span> <span class="string">node_js</span></span><br><span class="line"></span><br><span class="line"><span class="attr">node_js:</span> <span class="string">stable</span></span><br><span class="line"></span><br><span class="line"><span class="attr">install:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">npm</span> <span class="string">i</span> <span class="comment"># Install Hexo and it's dependencies.</span></span><br><span class="line"></span><br><span class="line"><span class="attr">script:</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">generate</span></span><br><span class="line">  <span class="bullet">-</span> <span class="string">hexo</span> <span class="string">deploy</span> <span class="comment"># As what you do manually.</span></span><br></pre></td></tr></table></figure>
+<p>The script tells Travis-ci how to build and deploy your site.</p>
+</li>
+<li><p>Go to <a href="https://travis-ci.org/" target="_blank" rel="noopener">Travis-ci</a>. Login with your GitHub account.</p>
+</li>
+<li><p>Active your blog’s repository by clicking the small + at the left. Build starts every time you push to the GitHub repo.</p>
+</li>
+<li><p>Go to your repository’s settings. add an environment variable named <code>GH_TOKEN</code> and paste your GitHub token generated at Step #1 as the value.</p>
+</li>
+<li><p>Now push. Your blog should be deployed.</p>
+</li>
+</ol>
+
+        </div></article>
+      <nav class="pagination"><a class="prev" href="/">
+        <i class="iconfont icon-left"></i>
+        <span class="prev-text">Prev</span>
+      </a>
+    </nav></section></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:1783250036@qq.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://stackoverflow.com/users/10811334/ycao" target="_blank" rel="noopener" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+        <a href="https://twitter.com/__YiCao__" target="_blank" rel="noopener" class="iconfont icon-twitter" title="twitter"></a>
+        <a href="https://github.com/xiaoyu2006" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="https://www.zhihu.com/people/caonemo" target="_blank" rel="noopener" class="iconfont icon-zhihu" title="zhihu"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2020 - 2021<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yi Cao</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>

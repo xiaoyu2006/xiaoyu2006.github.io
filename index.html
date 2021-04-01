@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+  <head><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+<meta name="description" content="Having fun messing around."/><link rel="alternate" href="/atom.xml" title="Yi's blog"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=2.11.0" />
+<link rel="canonical" href="https://xiaoyu2006.github.com/"/>
+
+<link rel="stylesheet" type="text/css" href="/lib/fancybox/jquery.fancybox.css" /><script type="text/x-mathjax-config">
+    MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });
+  </script>
+  <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<link rel="stylesheet" type="text/css" href="/css/style.css?v=2.11.0" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150735695-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-150735695-2');
+</script><script id="baidu_push">
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+  window.config = {"leancloud":{"app_id":null,"app_key":null},"toc":true,"fancybox":true,"pjax":"","latex":true};
+</script>
+
+    <title>Yi's blog</title>
+  <meta name="generator" content="Hexo 4.2.1"><link rel="alternate" href="/atom.xml" title="Yi's blog" type="application/atom+xml">
+</head>
+
+  <body><div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/." class="logo">Yi's blog</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list"><a href="/">
+        <li class="mobile-menu-item">Home
+          </li>
+      </a><a href="/archives/">
+        <li class="mobile-menu-item">Archives
+          </li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About
+          </li>
+      </a></ul>
+</nav>
+<div class="container" id="mobile-panel">
+      <header id="header" class="header"><div class="logo-wrapper">
+  <a href="/." class="logo">Yi's blog</a>
+</div>
+
+<nav class="site-navbar"><ul id="menu" class="menu"><li class="menu-item">
+          <a class="menu-item-link" href="/">
+            Home
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/archives/">
+            Archives
+            </a>
+        </li>
+      <li class="menu-item">
+          <a class="menu-item-link" href="/about/">
+            About
+            </a>
+        </li>
+      </ul></nav>
+</header>
+
+      <main id="main" class="main">
+        <div class="content-wrapper">
+          <div id="content" class="content"><section id="posts" class="posts"><article class="post">
+    <header class="post-header">
+      <h1 class="post-title"><a class="post-link" href="/2020/08/08/Make-wheels-with-Autotools-C-C/">Make wheels with Autotools & C/C++</a>
+        </h1>
+
+      <div class="post-meta">
+        <span class="post-time">
+          2020-08-08
+        </span></div>
+    </header>
+
+    <div class="post-content"><p>This how-to guide will teach you how to make wheels with Autotools &amp; C/C++. Note that it isn’t detailed, just to show you how the whole system works.</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="Requirements"><a href="#Requirements" class="headerlink" title="Requirements"></a>Requirements</h2><p>My Autotools versions are:</p>
+<ul>
+<li>Automake 1.16.1</li>
+<li>Autoconf 2.69</li>
+<li>Libtool 2.4.6</li>
+</ul>
+<p>And I’m on OS X. Installation guide will not be included.</p>
+<h2 id="Product"><a href="#Product" class="headerlink" title="Product"></a>Product</h2><p>We’ll make a simple C lib (C++ compatible) called <code>libts</code> helps you to get time between two calls.</p>
+<h1 id="Procedures"><a href="#Procedures" class="headerlink" title="Procedures"></a>Procedures</h1><p>Time to actually make something!</p>
+<h2 id="Basic-sources"><a href="#Basic-sources" class="headerlink" title="Basic sources"></a>Basic sources</h2><p>Our project starts simply like this, including a header file and a source file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── ts.c</span><br><span class="line">└── ts.h</span><br><span class="line"></span><br><span class="line">0 directories, 2 files</span><br></pre></td></tr></table></figure>
+
+<p>And codes are shown below:</p>
+<p><code>ts.h</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">ifndef</span> __TS_H__</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> __TS_H__</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;sys/time.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"config.h"</span> <span class="comment">/* This file will be generated later */</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* For C++ compatiblity */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line"><span class="keyword">extern</span> <span class="string">"C"</span> &#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> FIRST_CALL -1.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">* Returns the time passed in seconds before the latest call.</span></span><br><span class="line"><span class="comment">* If it's the first time called, return FIRST_CALL.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="function"><span class="keyword">extern</span> <span class="keyword">double</span> <span class="title">getTimeDuration</span><span class="params">(<span class="keyword">void</span>)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* End of the extern "C" above */</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> __cplusplus</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* __TS_H__ */</span></span></span><br></pre></td></tr></table></figure>
+
+<p><code>ts.c</code></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ts.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">getTimeDuration</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">double</span> latest = <span class="number">0</span>; <span class="comment">/* Last call */</span></span><br><span class="line">    <span class="keyword">double</span> sec; <span class="comment">/* Current time in second */</span></span><br><span class="line">    <span class="keyword">double</span> ret; <span class="comment">/* Return value */</span></span><br><span class="line"></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">if</span> HAVE_GETTIMEOFDAY <span class="comment">/* This macro comes from config.h */</span></span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* In some specific OS, gettimeofday() is available */</span></span><br><span class="line">    <span class="comment">/* See https://man7.org/linux/man-pages/man2/gettimeofday.2.html */</span></span><br><span class="line"></span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">timeval</span> <span class="title">tv</span>;</span></span><br><span class="line">    gettimeofday(&amp;tv, <span class="literal">NULL</span>);</span><br><span class="line">    sec = tv.tv_sec;</span><br><span class="line">    sec += tv.tv_usec / <span class="number">1000000.0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">else</span> <span class="comment">/* HAVE_GETTIMEOFDAY */</span></span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/* Or we can use time() instead. */</span></span><br><span class="line"></span><br><span class="line">    sec = time(<span class="literal">NULL</span>);</span><br><span class="line"></span><br><span class="line">    <span class="meta">#<span class="meta-keyword">endif</span> <span class="comment">/* HAVE_GETTIMEOFDAY */</span></span></span><br><span class="line"></span><br><span class="line">    ret = sec - latest; <span class="comment">/* Calculate difference */</span></span><br><span class="line">    latest = sec; <span class="comment">/* Update latest */</span></span><br><span class="line">    <span class="keyword">if</span> (ret == sec) <span class="comment">/* First call, return special value */</span></span><br><span class="line">        <span class="keyword">return</span> FIRST_CALL;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Now the source code is done. Let’s install Autotools!</p>
+<h2 id="Autotools"><a href="#Autotools" class="headerlink" title="Autotools"></a>Autotools</h2><p>Autotools is a complicated build system. We have to create several files.</p>
+<p><em>Note: The following commands are run at <code>.</code> of the source code.</em></p>
+<h3 id="configure-ac"><a href="#configure-ac" class="headerlink" title="configure.ac"></a><code>configure.ac</code></h3><p><strong><code>configure.ac</code> is a file for <code>Autoconf</code> to generate an <code>configure</code> script. It checks availability (in our example, if <code>gettimeofday()</code> and <code>time()</code> are available) and generates <code>Makefile</code> from <code>Makefile.in</code>, which will be generated later.</strong></p>
+<p>Let’s start with an <code>autoscan</code> GNU provided. It scans your code and generates an <code>configure.ac</code> automatically. Sadly, the generated file is useless without modifying.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ autoscan</span><br></pre></td></tr></table></figure>
+
+<p>Now your project will be something like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── autoscan.log</span><br><span class="line">├── configure.scan</span><br><span class="line">├── ts.c</span><br><span class="line">└── ts.h</span><br><span class="line"></span><br><span class="line">0 directories, 4 files</span><br></pre></td></tr></table></figure>
+
+<p>The <code>autoscan.log</code> can be removed safely. What matters is <code>configure.scan</code>. We have to rename it to <code>configure.ac</code> first:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ rm -f autoscan.log</span><br><span class="line">$ mv configure.scan configure.ac</span><br></pre></td></tr></table></figure>
+
+<p><code>configure.ac</code> looks like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#                                               -*- Autoconf -*-</span></span><br><span class="line"><span class="comment"># Process this file with autoconf to produce a configure script.</span></span><br><span class="line"></span><br><span class="line">AC_PREREQ([2.69])</span><br><span class="line">AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])</span><br><span class="line">AC_CONFIG_SRCDIR([ts.c])</span><br><span class="line">AC_CONFIG_HEADERS([config.h])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for programs.</span></span><br><span class="line">AC_PROG_CC</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for libraries.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for header files.</span></span><br><span class="line">AC_CHECK_HEADERS([sys/time.h])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for typedefs, structures, and compiler characteristics.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for library functions.</span></span><br><span class="line">AC_CHECK_FUNCS([gettimeofday])</span><br><span class="line"></span><br><span class="line">AC_OUTPUT</span><br></pre></td></tr></table></figure>
+
+<p>It’s actually a piece of <a href="https://www.gnu.org/software/m4/m4.html" target="_blank" rel="noopener">m4</a> language, and all those <code>AC_XXX</code> stuff are macros and will be expanded into bash scripts. You can write bash in the <code>configure.ac</code> directly as well.</p>
+<p>As you can see, it’s smart to include <code>AC_CHECK_FUNCS([gettimeofday])</code>. This will checks if <code>gettimeofday</code> is available. Magic! But, we have to modify it anyway.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#                                               -*- Autoconf -*-</span></span><br><span class="line"><span class="comment"># Process this file with autoconf to produce a configure script.</span></span><br><span class="line"></span><br><span class="line">AC_PREREQ([2.69]) <span class="comment"># 1</span></span><br><span class="line">AC_INIT([libts], [0.1], [username@example.com]) <span class="comment"># 2</span></span><br><span class="line">AC_CONFIG_SRCDIR([ts.c]) <span class="comment"># 3</span></span><br><span class="line">AC_CONFIG_HEADERS([config.h]) <span class="comment"># 4</span></span><br><span class="line"></span><br><span class="line">AM_INIT_AUTOMAKE <span class="comment"># Modified 5</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for programs.</span></span><br><span class="line">AC_PROG_CC <span class="comment"># 6</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for libraries.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for header files.</span></span><br><span class="line">AC_CHECK_HEADERS([sys/time.h]) <span class="comment"># 7</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for typedefs, structures, and compiler characteristics.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for library functions.</span></span><br><span class="line">AC_CHECK_FUNCS([gettimeofday]) <span class="comment"># 8</span></span><br><span class="line"></span><br><span class="line">LT_INIT <span class="comment"># Modified 9</span></span><br><span class="line">AC_CONFIG_FILES([Makefile]) <span class="comment"># Modified 10</span></span><br><span class="line"></span><br><span class="line">AC_OUTPUT <span class="comment"># 11</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>1: Checks the minimal version of <code>autoconf</code>.</li>
+<li>2 &amp; 11: Start and end of every <code>configure.ac</code>. It also includes some info for your project.</li>
+<li>3: Check if the source code exists.</li>
+<li>4: Generates the configuration header named <code>config.h</code>.</li>
+<li>5: Prepare for generating <code>Makefile</code>.</li>
+<li>6: Determine a C compiler to use.</li>
+<li>7: Check if header file <code>sys/time.h</code> is available.</li>
+<li>8: Check if function <code>gettimeofday</code> is available.</li>
+<li>9: Initialize Libtool. This will be used later.</li>
+<li>10: Generate <code>Makefile</code> from <code>Makefile.in</code>, which will be generated later.</li>
+</ul>
+<p>And to generate the <code>configure</code> file:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ aclocal</span><br><span class="line">$ autoconf</span><br><span class="line">$ autoheader</span><br></pre></td></tr></table></figure>
+
+<p>And your project will be something like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── aclocal.m4</span><br><span class="line">├── autom4te.cache</span><br><span class="line">│   ├── output.0</span><br><span class="line">│   ├── output.1</span><br><span class="line">│   ├── output.2</span><br><span class="line">│   ├── output.3</span><br><span class="line">│   ├── requests</span><br><span class="line">│   ├── traces.0</span><br><span class="line">│   ├── traces.1</span><br><span class="line">│   ├── traces.2</span><br><span class="line">│   └── traces.3</span><br><span class="line">├── config.h.in</span><br><span class="line">├── configure</span><br><span class="line">├── configure.ac</span><br><span class="line">├── ts.c</span><br><span class="line">└── ts.h</span><br></pre></td></tr></table></figure>
+
+<p>It has generated a lot, right?</p>
+<h3 id="Makefile-am"><a href="#Makefile-am" class="headerlink" title="Makefile.am"></a><code>Makefile.am</code></h3><p><code>Makefile.am</code> is a file for <code>automake</code> to generate the <code>Makefile.in</code> mentioned above. Now create a <code>Makefile.am</code> and write the following stuffs:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AUTOMAKE_OPTIONS &#x3D; foreign</span><br><span class="line">include_HEADERS&#x3D;ts.h</span><br><span class="line">lib_LTLIBRARIES &#x3D; libts.la</span><br><span class="line">libts_la_SOURCES&#x3D;ts.c</span><br></pre></td></tr></table></figure>
+
+<p>The build target is <code>libts.la</code>, containing the source file <code>ts.c</code>, which uses <code>Libtool</code> to sustain portability. It’s simpler than <code>configure.ac</code>. No future explanations provided.</p>
+<p>Also, note that <code>AUTOMAKE_OPTIONS</code> is set to <code>foreign</code>, so it won’t force us to create those <code>NEWS</code>, <code>AUTHOR</code>, <code>ChangeLog</code>, etc.</p>
+<p>To generate <code>Makefile.in</code>, run:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ libtoolize <span class="comment"># Generate supporting files for Libtool</span></span><br><span class="line">$ automake --add-missing</span><br></pre></td></tr></table></figure>
+
+<h3 id="Tests"><a href="#Tests" class="headerlink" title="Tests"></a>Tests</h3><p>Tests are always needed. Let’s do this in Autotools’ way. First create <code>test.c</code>:</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">"ts.h"</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;assert.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* Program exits with 0 means tests has passed */</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> args, <span class="keyword">char</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">double</span> first = getTimeDuration();</span><br><span class="line">    assert(first == FIRST_CALL);</span><br><span class="line">    <span class="keyword">double</span> second = getTimeDuration();</span><br><span class="line">    assert(second != FIRST_CALL);</span><br><span class="line">    <span class="built_in">puts</span>(<span class="string">"OK"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>You can use modern test frameworks too.</p>
+<p>Edit <code>Makefile.am</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># Lib</span><br><span class="line">AUTOMAKE_OPTIONS &#x3D; foreign</span><br><span class="line">include_HEADERS&#x3D;ts.h</span><br><span class="line">lib_LTLIBRARIES &#x3D; libts.la</span><br><span class="line">libts_la_SOURCES&#x3D;ts.c</span><br><span class="line"></span><br><span class="line"># Tests</span><br><span class="line">TESTS &#x3D; checkTS</span><br><span class="line">check_PROGRAMS &#x3D; checkTS</span><br><span class="line">checkTS_SOURCES &#x3D; test.c</span><br><span class="line">checkTS_LDFLAGS &#x3D; libts.la</span><br></pre></td></tr></table></figure>
+
+<p>Also, if you don’t want to type the above commands again:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ autoreconf -i</span><br></pre></td></tr></table></figure>
+
+<p>Will you hate me?</p>
+<h3 id="configure-amp-build"><a href="#configure-amp-build" class="headerlink" title="configure &amp; build"></a>configure &amp; build</h3><p>Simple! Everything is ready now. Do this as usual:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ./configure</span><br><span class="line">$ make</span><br></pre></td></tr></table></figure>
+
+<p>And to install:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo make install</span><br></pre></td></tr></table></figure>
+
+<p>To test:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make check</span><br></pre></td></tr></table></figure>
+
+<p>To make a distribution package:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ make dist</span><br></pre></td></tr></table></figure>
+
+<p>Whoa, you did that! To use this lib in your own programs, just <code>#include &lt;ts.h&gt;</code> and link this library (<code>-Lts</code>)!</p>
+<h2 id="Product-1"><a href="#Product-1" class="headerlink" title="Product"></a>Product</h2><p>This demo’s distribution can be found <a href="https://github.com/xiaoyu2006/blog-source/blob/master/source/_posts/libts-0.1.tar.gz" target="_blank" rel="noopener">here</a>.</p>
+
+        </div></article>
+      <nav class="pagination"><a class="next" href="/page/2/">
+        <span class="next-text">Next</span>
+        <i class="iconfont icon-right"></i>
+      </a>
+    </nav></section></div></div>
+      </main>
+
+      <footer id="footer" class="footer"><div class="social-links"><a href="mailto:1783250036@qq.com" class="iconfont icon-email" title="email"></a>
+        <a href="https://stackoverflow.com/users/10811334/ycao" target="_blank" rel="noopener" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+        <a href="https://twitter.com/__YiCao__" target="_blank" rel="noopener" class="iconfont icon-twitter" title="twitter"></a>
+        <a href="https://github.com/xiaoyu2006" target="_blank" rel="noopener" class="iconfont icon-github" title="github"></a>
+        <a href="https://www.zhihu.com/people/caonemo" target="_blank" rel="noopener" class="iconfont icon-zhihu" title="zhihu"></a>
+        <a href="/atom.xml" class="iconfont icon-rss" title="rss"></a>
+    </div><div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/ahonn/hexo-theme-even" target="_blank" rel="noopener">Even</a>
+  </span>
+
+  <span class="copyright-year">&copy;2020 - 2021<span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Yi Cao</span>
+  </span>
+</div>
+</footer>
+
+      <div class="back-to-top" id="back-to-top">
+        <i class="iconfont icon-up"></i>
+      </div>
+    </div><script type="text/javascript" src="/lib/jquery/jquery.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/src/even.js?v=2.11.0"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Yi&#39;s blog</title>
+  
+  <subtitle>Sugar makes me happy.</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://xiaoyu2006.github.com/"/>
+  <updated>2021-04-01T05:00:54.336Z</updated>
+  <id>https://xiaoyu2006.github.com/</id>
+  
+  <author>
+    <name>Yi Cao</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Make wheels with Autotools &amp; C/C++</title>
+    <link href="https://xiaoyu2006.github.com/2020/08/08/Make-wheels-with-Autotools-C-C/"/>
+    <id>https://xiaoyu2006.github.com/2020/08/08/Make-wheels-with-Autotools-C-C/</id>
+    <published>2020-08-08T22:00:00.000Z</published>
+    <updated>2021-04-01T05:00:54.336Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;This how-to guide will teach you how to make wheels with Autotools &amp;amp; C/C++. Note that it isn’t detailed, just to show you how the who
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Build your own blog with Hexo.js</title>
+    <link href="https://xiaoyu2006.github.com/2020/07/21/Build-your-own-blog-with-Hexo-js/"/>
+    <id>https://xiaoyu2006.github.com/2020/07/21/Build-your-own-blog-with-Hexo-js/</id>
+    <published>2020-07-21T09:00:00.000Z</published>
+    <updated>2021-04-01T05:00:54.336Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Since lots of my classmates/friends have their own blogs, I decided to build one too with &lt;a href=&quot;https://github.com/hexojs/hexo&quot; target
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
