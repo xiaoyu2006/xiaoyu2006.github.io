@@ -23,7 +23,7 @@ email: caoyi06@qq.com
 description: >- # this means to ignore newlines until "baseurl:"
   Welcome to Yi's blog.
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://www.ycao.top" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://ycao.top" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: __YiCao__
 github_username:  xiaoyu2006
 
