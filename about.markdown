@@ -31,4 +31,4 @@ I'm Yi, a student who likes to mess around with code.
 - Mail: [caoyi06@qq.com](mailto:caoyi06@qq.com)
 - GitHub: [@xiaoyu2006](https://github.com/xiaoyu2006)
 - Steam (?): [@xkcd17](https://steamcommunity.com/id/xiaoyu2006)
-- BTC (???): `1Myv4Z5efT8TJRfNyW9WXSN91WxP3zvEC2`
+- BTC (???): `3HwzpuUbULsxnr3NY6iWHTQfcgNRoqfJyj`
