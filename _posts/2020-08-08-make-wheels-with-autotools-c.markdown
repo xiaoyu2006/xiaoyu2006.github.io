@@ -363,5 +363,4 @@ Whoa, you did that! To use this lib in your own programs, just
 
 ## Product
 
-This demo's distribution can be found [here]
-(https://github.com/xiaoyu2006/xiaoyu2006.github.io/blob/master/files/libts-0.1.tar.gz).
+This demo's distribution can be found [here](https://github.com/xiaoyu2006/xiaoyu2006.github.io/blob/master/files/libts-0.1.tar.gz).
