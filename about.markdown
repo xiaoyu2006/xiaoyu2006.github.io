@@ -28,10 +28,11 @@ I'm Yi, a student who likes to mess around with code.
 
 # Contacts
 
-- Mail: [caoyi06@qq.com](mailto:caoyi06@qq.com)
-- GitHub: [@xiaoyu2006](https://github.com/xiaoyu2006)
-- Steam (?): [@xkcd17](https://steamcommunity.com/id/xiaoyu2006)
-- BTC (??): `1Myv4Z5efT8TJRfNyW9WXSN91WxP3zvEC2`
+ - Mail: [caoyi06@qq.com](mailto:caoyi06@qq.com)
+ - GitHub: [@xiaoyu2006](https://github.com/xiaoyu2006)
+ - Steam (?): [@xkcd17](https://steamcommunity.com/id/xiaoyu2006)
+ - BTC (??): `1Myv4Z5efT8TJRfNyW9WXSN91WxP3zvEC2`
+ - ETH (???): `0x02CbAd7f9BabC4313Ff590f92b0206d0C47CFc96`
 
 ## My PGP public key
 
