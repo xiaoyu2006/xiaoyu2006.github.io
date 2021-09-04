@@ -32,7 +32,7 @@ I'm Yi, a student who likes to mess around with code.
  - GitHub: [@xiaoyu2006](https://github.com/xiaoyu2006)
  - Steam (?): [@xkcd17](https://steamcommunity.com/id/xiaoyu2006)
  - BTC (??): `bc1q5uq7q6y5ahuz6te0x8t5x4y7asd79tuufw5z95`
- - ETH (???): `0x02CbAd7f9BabC4313Ff590f92b0206d0C47CFc96`
+ - LTC (???): `ltc1qcf04saq5ylcpckqf74g5v9h5un47es0sq5q8ky`
 
 ## My PGP public key
 
