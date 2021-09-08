@@ -31,9 +31,18 @@ I'm Yi, a student who likes to mess around with code.
  - Mail: [caoyi06@qq.com](mailto:caoyi06@qq.com)
  - GitHub: [@xiaoyu2006](https://github.com/xiaoyu2006)
  - Steam (?): [@xkcd17](https://steamcommunity.com/id/xiaoyu2006)
- - BTC (??): `bc1q5uq7q6y5ahuz6te0x8t5x4y7asd79tuufw5z95`
- - LTC (???): `ltc1qcf04saq5ylcpckqf74g5v9h5un47es0sq5q8ky`
- - ADA (????): `addr1q8j35j9mp3pnal3tvaettemm45uaup4rn7st0jc2uzprrwjksktavfzyjjlq3e4c0e7zgwy6r065mq4cmxw3vjsccdnqvuzl2u`
+
+# Other stuff
+
+ - BTC:
+```
+bc1q5uq7q6y5ahuz6te0x8t5x4y7asd79tuufw5z95
+```
+
+ - ADA:
+```
+addr1q8j35j9mp3pnal3tvaettemm45uaup4rn7st0jc2uzprrwjksktavfzyjjlq3e4c0e7zgwy6r065mq4cmxw3vjsccdnqvuzl2u
+```
 
 ## My PGP public key
 
