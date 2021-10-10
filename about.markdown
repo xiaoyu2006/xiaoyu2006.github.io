@@ -39,9 +39,9 @@ I'm Yi, a student who likes to mess around with code.
 bc1q5uq7q6y5ahuz6te0x8t5x4y7asd79tuufw5z95
 ```
 
- - ADA:
+ - ETH/BSC
 ```
-addr1q8j35j9mp3pnal3tvaettemm45uaup4rn7st0jc2uzprrwjksktavfzyjjlq3e4c0e7zgwy6r065mq4cmxw3vjsccdnqvuzl2u
+0x02CbAd7f9BabC4313Ff590f92b0206d0C47CFc96
 ```
 
 ## My PGP public key
