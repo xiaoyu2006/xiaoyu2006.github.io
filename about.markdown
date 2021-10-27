@@ -32,7 +32,7 @@ I'm Yi, a student who likes to mess around with code. Currenting studying in NFL
  - GitHub: [@xiaoyu2006](https://github.com/xiaoyu2006)
  - Steam (?): [@xkcd17](https://steamcommunity.com/id/xiaoyu2006)
 
-# Other stuff
+# Buy me a coffee
 
  - Bitcoin:
 ```
@@ -48,3 +48,6 @@ bc1q5uq7q6y5ahuz6te0x8t5x4y7asd79tuufw5z95
 ```
 DsozLtp5tWLc752RWJUemB2T8KE9tKvUC1odeQSanwZs
 ```
+
+# License
+<a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
