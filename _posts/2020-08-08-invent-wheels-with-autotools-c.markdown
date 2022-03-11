@@ -1,11 +1,11 @@
 ---
 layout: post
-title:  "Make wheels with Autotools & C"
+title:  "Invent wheels with Autotools & C"
 date:   2020-08-08 22:00:00 +0800
 categories: C GNU
 ---
 
-This how-to guide will teach you how to make wheels with Autotools & C. Note 
+This how-to guide will teach you how to invent wheels with Autotools & C. Note 
 that it isn't detailed, just to show you how the whole system works.
 
 # Introduction
@@ -22,8 +22,8 @@ And I'm on OS X. Installation guide will not be included.
 
 ## Product
 
-We'll make a simple C lib (C++ compatible) called `libts` helps you to get time 
-between two calls.
+We'll make a simple C lib (C++ compatible) called `libts` helps you to get time duration 
+between two function calls.
 
 # Procedures
 
