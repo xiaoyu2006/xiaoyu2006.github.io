@@ -30,7 +30,7 @@ I'm Yi, a student who likes to mess around with code. Currenting studying in NFL
 
  - Mail: [caoyi06@qq.com](mailto:caoyi06@qq.com)
  - GitHub: [@xiaoyu2006](https://github.com/xiaoyu2006)
- - Steam (?): [@xkcd17](https://steamcommunity.com/id/xiaoyu2006)
+ - Steam (?): [@xiaoyu2006](https://steamcommunity.com/id/xiaoyu2006)
 
 # Buy me a coffee
 
