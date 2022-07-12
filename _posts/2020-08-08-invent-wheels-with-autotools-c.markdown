@@ -5,8 +5,8 @@ date:   2020-08-08 22:00:00 +0800
 categories: C GNU
 ---
 
-This how-to guide will teach you how to invent wheels with Autotools & C. Note 
-that it isn't detailed, just to show you how the whole system works.
+This how-to guide will teach you how to invent wheels with Autotools & C. Note that it isn't detailed, just to give you some ideas how the whole system works.
+
 
 # Introduction
 
@@ -22,8 +22,7 @@ And I'm on OS X. Installation guide will not be included.
 
 ## Product
 
-We'll make a simple C lib (C++ compatible) called `libts` helps you to get time duration 
-between two function calls.
+We'll make a simple C lib (C++ compatible) called `libts` helps you to get time duration between two function calls.
 
 # Procedures
 
@@ -44,6 +43,7 @@ Our project starts simply like this, including a header file and a source file:
 And codes are shown below:
 
 `ts.h`
+
 ```c
 #ifndef __TS_H__
 #define __TS_H__
@@ -73,6 +73,7 @@ extern double getTimeDuration(void);
 ```
 
 `ts.c`
+
 ```c
 #include "ts.h"
 
@@ -115,24 +116,20 @@ Now the source code is done. Let's install Autotools!
 
 Autotools is a complicated build system. We have to create several files.
 
-*Note: The following commands are run at `.` of the source code.*
+*Note: The following commands are run at the root of the source code.*
 
 ### `configure.ac`
 
-**`configure.ac` is a file for `Autoconf` to generate an `configure` script. It 
-checks availability (in our example, if `gettimeofday()` and `time()` are 
-available) and generates `Makefile` from `Makefile.in`, which will be generated 
+**`configure.ac` is a file for `Autoconf` to generate an `configure` script. It checks availability (in our example, if `gettimeofday()` and `time()` are available) and generates `Makefile` from `Makefile.in`, which will be generated
 later.**
 
-Let's start with an `autoscan` GNU provided. It scans your code and generates 
-an `configure.ac` automatically. Sadly, the generated file is useless without 
-modifying.
+Let's start with an `autoscan` GNU provided. It scans your code and generates an `configure.ac` automatically.
 
 ```bash
-$ autoscan
+autoscan
 ```
 
-Now your project will be something like this:
+The directory should be like this:
 
 ```
 .
@@ -144,12 +141,11 @@ Now your project will be something like this:
 0 directories, 4 files
 ```
 
-The `autoscan.log` can be removed safely. What matters is `configure.scan`. We 
-have to rename it to `configure.ac` first:
+The `autoscan.log` can be removed safely. What matters is `configure.scan`. We have to rename it to `configure.ac` first:
 
 ```bash
-$ rm -f autoscan.log
-$ mv configure.scan configure.ac
+rm -f autoscan.log
+mv configure.scan configure.ac
 ```
 
 `configure.ac` looks like this:
@@ -179,12 +175,9 @@ AC_CHECK_FUNCS([gettimeofday])
 AC_OUTPUT
 ```
 
-It's actually a piece of [m4](https://www.gnu.org/software/m4/m4.html) 
-language, and all those `AC_XXX` stuffs are macros and will be expanded into 
-bash scripts. You can write bash in the `configure.ac` directly as well.
+It's actually a piece of [m4](https://www.gnu.org/software/m4/m4.html) language, and all those `AC_XXX` stuffs are macros and will be expanded into bash scripts. You can write bash in the `configure.ac` directly as well.
 
-As you can see, it's smart to include `AC_CHECK_FUNCS([gettimeofday])`. This 
-will checks if `gettimeofday` is available. Magic! But, we have to modify it 
+As you can see, it's smart to include `AC_CHECK_FUNCS([gettimeofday])`. This will checks if `gettimeofday` is available. Magic! But, we have to modify it
 anyway.
 
 ```bash
@@ -218,7 +211,7 @@ AC_OUTPUT # 11
 ```
 
 - 1: Checks the minimal version of `autoconf`.
-- 2 & 11: Start and end of every `configure.ac`. It also includes some info for 
+- 2 & 11: Start and end of every `configure.ac`. It also includes some info for
   your project.
 - 3: Check if the source code exists.
 - 4: Generates the configuration header named `config.h`.
@@ -232,12 +225,12 @@ AC_OUTPUT # 11
 And to generate the `configure` file:
 
 ```bash
-$ aclocal
-$ autoconf
-$ autoheader
+aclocal
+autoconf
+autoheader
 ```
 
-And your project will be something like this:
+And your project will be like this:
 
 ```
 .
@@ -261,8 +254,7 @@ And your project will be something like this:
 
 ### `Makefile.am`
 
-`Makefile.am` is a file for `automake` to generate the `Makefile.in` mentioned 
-above. Now create a `Makefile.am` and write the following stuffs:
+`Makefile.am` is a file for `automake` to generate the `Makefile.in` mentioned above. Now create a `Makefile.am` and write the following stuffs:
 
 ```automake
 AUTOMAKE_OPTIONS = foreign
@@ -271,17 +263,15 @@ lib_LTLIBRARIES = libts.la
 libts_la_SOURCES=ts.c
 ```
 
-The build target is `libts.la`, containing the source file `ts.c`, which uses 
-`Libtool` to sustain portability. It's simpler than `configure.ac`.
+The build target is `libts.la`, containing the source file `ts.c`, which uses `Libtool` to sustain portability. It's simpler than `configure.ac`.
 
-Also, note that `AUTOMAKE_OPTIONS` is set to `foreign`, so it won't force us to 
-create those `NEWS`, `AUTHOR`, `ChangeLog`, etc.
+Also, note that `AUTOMAKE_OPTIONS` is set to `foreign`, so it won't force us to create those `NEWS`, `AUTHOR`, `ChangeLog`, etc.
 
 To generate `Makefile.in`, run:
 
 ```bash
-$ libtoolize # Generate supporting files for Libtool
-$ automake --add-missing
+libtoolize # Generate supporting files for Libtool
+automake --add-missing
 ```
 
 ### Tests
@@ -307,7 +297,7 @@ int main(int args, char *argv[])
 
 You can use modern test frameworks too.
 
-Edit `Makefile.am`
+`Makefile.am`:
 
 ```automake
 # Lib
@@ -323,44 +313,41 @@ checkTS_SOURCES = test.c
 checkTS_LDFLAGS = libts.la
 ```
 
-Also, if you don't want to type the above commands again:
+Also, if you don't want to type the above `aclocal` and stuff again:
 
 ```bash
-$ autoreconf -i
+autoreconf -i
 ```
-
-Will you hate me?
 
 ### configure & build
 
 Simple! Everything is ready now. Do this as usual:
 
 ```bash
-$ ./configure
-$ make
+./configure
+make
 ```
 
 And to install:
 
 ```bash
-$ sudo make install
+sudo make install
 ```
 
 To test:
 
 ```bash
-$ make check
+make check
 ```
 
 To make a distribution package:
 
 ```bash
-$ make dist
+make dist
 ```
 
-Whoa, you did that! To use this lib in your own programs, just 
-`#include <ts.h>` and link this library (`-lts`)!
+Whoa, you did that! To use this lib in your own programs, just `#include <ts.h>` and link this library (`-lts`)!
 
 ## Product
 
-This demo's distribution can be found [here](https://github.com/xiaoyu2006/xiaoyu2006.github.io/blob/master/files/libts-0.1.tar.gz).
+This demo's distribution can be found [here](/files/libts-0.1.tar.gz).
