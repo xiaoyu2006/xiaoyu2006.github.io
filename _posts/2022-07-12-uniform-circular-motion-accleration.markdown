@@ -12,10 +12,10 @@ categories: zh-ch physics
 这一段时间中的平均加速度为
 
 $$
-a = \frac{\vec{v_{j}}-\vec{v_{i}}}{t}
+\vec{a} = \frac{\vec{v_{j}}-\vec{v_{i}}}{t}
 $$
 
-当$t\rightarrow 0$时候$a$为瞬时加速度。
+当$t\rightarrow 0$时候$\vec{a}$为瞬时加速度。
 
 ![](/files/20220712/1.png)
 
@@ -55,7 +55,7 @@ $$
 将得到的$\lvert \vec{\triangle v} \rvert$代入a，可以求出瞬时加速度的大小
 
 $$
-\lvert a \rvert = 
+\lvert \vec{a} \rvert = 
 \lvert \frac{\vec{v_{j}}-\vec{v_{i}}}{t} \rvert = 
 \frac{\lvert \vec{\triangle v} \rvert}{t} =
 \frac{\alpha v}{t}
@@ -64,7 +64,7 @@ $$
 由线速度和角速度的定义，可以得到
 
 $$
-\lvert a \rvert = v \times \omega
+\lvert \vec{a} \rvert = v \times \omega
 $$
 
 但这只是加速度的大小。观察以下图像：
@@ -72,5 +72,5 @@ $$
 ![](/files/20220712/5.png)
 
 
-易得当$t \rightarrow 0$时$\alpha_{1} \rightarrow 0$，此时$\vec{\triangle v}$与圆的切线垂直，即$a$朝向圆心。
+易得当$t \rightarrow 0$时$\alpha_{1} \rightarrow 0$，此时$\vec{\triangle v}$与圆的切线垂直，即$\vec{a}$朝向圆心。
 
