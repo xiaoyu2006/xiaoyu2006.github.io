@@ -6,7 +6,20 @@ categories: C GNU
 ---
 
 This how-to guide will teach you how to invent wheels with Autotools & C. Note that it isn't detailed, just to give you some ideas how the whole system works.
+# TOC
 
+- [TOC](#toc)
+- [Introduction](#introduction)
+  - [Requirements](#requirements)
+  - [Product](#product)
+- [Procedures](#procedures)
+  - [A simple lib](#a-simple-lib)
+  - [Autotools](#autotools)
+    - [`configure.ac`](#configureac)
+    - [`Makefile.am`](#makefileam)
+    - [Tests](#tests)
+    - [configure & build](#configure--build)
+  - [Product](#product-1)
 
 # Introduction
 
@@ -28,7 +41,7 @@ We'll make a simple C lib (C++ compatible) called `libts` helps you to get time 
 
 Time to actually make something!
 
-## Basic sources
+## A simple lib
 
 Our project starts simply like this, including a header file and a source file:
 
@@ -110,7 +123,7 @@ double getTimeDuration()
 }
 ```
 
-Now the source code is done. Let's install Autotools!
+Now the source code is done. Let's setup Autotools!
 
 ## Autotools
 
