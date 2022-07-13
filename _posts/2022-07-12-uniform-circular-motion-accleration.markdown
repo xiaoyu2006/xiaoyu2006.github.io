@@ -67,11 +67,10 @@ $$
 \lvert a \rvert = v \times \omega
 $$
 
-但这只是加速度的大小。获取加速度的方向简单一点，观察以下图像：
+但这只是加速度的大小。观察以下图像：
 
 ![](/files/20220712/5.png)
 
-<!--TODO-->
 
-易得当$t \rightarrow 0$时$\triangle v$朝向圆心。
+易得当$t \rightarrow 0$时$\alpha_{1} \rightarrow 0$，此时$\vec{\triangle v}$与圆的切线垂直，即$a$朝向圆心。
 
