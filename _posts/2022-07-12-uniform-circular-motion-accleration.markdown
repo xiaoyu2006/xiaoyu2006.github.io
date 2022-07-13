@@ -31,7 +31,7 @@ $$
 
 $$
 \frac
-{\lvert \triangle v \rvert}
+{\lvert \vec{\triangle v} \rvert}
 {\lvert \vec{v_{i}'} \rvert} = 
 \frac {BC} {AB} = \frac {BC} {r}
 $$
@@ -40,24 +40,24 @@ $$
 
 $$
 \frac
-{\lvert \triangle v \rvert}
+{\lvert \vec{\triangle v} \rvert}
 {\lvert \vec{v_{i}'} \rvert} = 
 \frac {\overset{\LARGE\frown}{BC}} {r} = 
 \frac {\alpha r} {r} = \alpha
 $$
 
 $$
-\lvert \triangle v \rvert = \alpha \lvert \vec{v_{i}'} \rvert = \alpha v
+\lvert \vec{\triangle v} \rvert = \alpha \lvert \vec{v_{i}'} \rvert = \alpha v
 $$
 
 ![](/files/20220712/4.png)
 
-将得到的$\lvert \triangle v \rvert$代入a，可以求出瞬时加速度的大小
+将得到的$\lvert \vec{\triangle v} \rvert$代入a，可以求出瞬时加速度的大小
 
 $$
 \lvert a \rvert = 
 \lvert \frac{\vec{v_{j}}-\vec{v_{i}}}{t} \rvert = 
-\frac{\lvert \triangle v \rvert}{t} =
+\frac{\lvert \vec{\triangle v} \rvert}{t} =
 \frac{\alpha v}{t}
 $$
 
