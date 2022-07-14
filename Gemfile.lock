@@ -1,7 +1,14 @@
+GIT
+  remote: https://github.com/pattex/jekyll-tagging.git
+  revision: 76fbc51bc644c660144ed9f6a1b0a854b23ee0f8
+  specs:
+    jekyll-tagging (1.1.0)
+      nuggets
+
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.0.5)
+    activesupport (6.0.5.1)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 0.7, < 2)
       minitest (~> 5.1)
@@ -32,7 +39,7 @@ GEM
     ffi (1.15.5)
     forwardable-extended (2.6.0)
     gemoji (3.0.1)
-    github-pages (226)
+    github-pages (227)
       github-pages-health-check (= 1.17.9)
       jekyll (= 3.9.2)
       jekyll-avatar (= 0.7.0)
@@ -74,7 +81,7 @@ GEM
       liquid (= 4.0.3)
       mercenary (~> 0.3)
       minima (= 2.5.1)
-      nokogiri (>= 1.13.4, < 2.0)
+      nokogiri (>= 1.13.6, < 2.0)
       rouge (= 3.26.0)
       terminal-table (~> 1.4)
     github-pages-health-check (1.17.9)
@@ -149,8 +156,6 @@ GEM
     jekyll-sitemap (1.4.0)
       jekyll (>= 3.7, < 5.0)
     jekyll-swiss (1.0.0)
-    jekyll-tagging (1.1.0)
-      nuggets
     jekyll-theme-architect (0.2.0)
       jekyll (> 3.5, < 5.0)
       jekyll-seo-tag (~> 2.0)
@@ -213,11 +218,11 @@ GEM
       jekyll-feed (~> 0.9)
       jekyll-seo-tag (~> 2.1)
     minitest (5.16.2)
-    nokogiri (1.13.6-arm64-darwin)
+    nokogiri (1.13.7-arm64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-darwin)
+    nokogiri (1.13.7-x86_64-darwin)
       racc (~> 1.4)
-    nokogiri (1.13.6-x86_64-linux)
+    nokogiri (1.13.7-x86_64-linux)
       racc (~> 1.4)
     nuggets (1.6.1)
     octokit (4.25.1)
@@ -265,7 +270,7 @@ PLATFORMS
 DEPENDENCIES
   github-pages
   jekyll-feed (~> 0.12)
-  jekyll-tagging
+  jekyll-tagging!
   minima (~> 2.5)
   tzinfo (~> 1.2)
   tzinfo-data
