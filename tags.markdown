@@ -8,7 +8,7 @@ permalink: /tags/
 
 <div class="post-preview">
   {% for tag in tags %}
-    <h2 style="padding-top: 70px;"> <a href="/tag/{{ tag[0] }}.html">{{ tag[0] }}</a>  <small>{{ tag | last | size }}</small></h2>
+    <h2 style="padding-top: 70px;"> <a href="/tag/{{ tag[0] }}.html">{{ tag[0] }}</a>  <small>posts: {{ tag | last | size }}</small></h2>
     <ul>
     {% for post in tag[1] %}
       <a href="{{ site.baseurl }}{{ post.url }}">
