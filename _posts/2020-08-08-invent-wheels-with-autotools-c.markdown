@@ -2,7 +2,7 @@
 layout: post
 title:  "Invent wheels with Autotools & C"
 date:   2020-08-08 22:00:00 +0800
-categories: C GNU
+tags: C GNU
 ---
 
 This how-to guide will teach you how to invent wheels with Autotools & C. Note that it isn't detailed, just to give you some ideas how the whole system works.
