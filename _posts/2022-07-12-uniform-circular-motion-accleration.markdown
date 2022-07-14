@@ -52,7 +52,7 @@ $$
 
 ![](/files/20220712/4.png)
 
-将得到的$\lvert \vec{\triangle v} \rvert$代入a，可以求出瞬时加速度的大小
+将得到的$\lvert \vec{\triangle v} \rvert$代入$\vec{a}$，可以求出瞬时加速度的大小
 
 $$
 \lvert \vec{a} \rvert = 
