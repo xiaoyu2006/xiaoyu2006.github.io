@@ -32,7 +32,6 @@ theme: minima
 markdown: kramdown
 plugins:
   - jekyll-feed
-  - jekyll-tagging
 
 tag_page_layout: tag_page
 tag_page_dir: tag
