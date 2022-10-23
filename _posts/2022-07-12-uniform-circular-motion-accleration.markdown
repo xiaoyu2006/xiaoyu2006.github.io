@@ -36,7 +36,7 @@ $$
 \frac {BC} {AB} = \frac {BC} {r}
 $$
 
-由于我们在求解瞬时加速度，$t\rightarrow 0$时$\alpha \rightarrow 0$，$BC = \overset{\LARGE\frown}{BC}$，所以
+由于我们在求解瞬时加速度，$t\rightarrow 0$时$\alpha \rightarrow 0$，$BC \rightarrow \overset{\LARGE\frown}{BC}$，所以
 
 $$
 \frac
