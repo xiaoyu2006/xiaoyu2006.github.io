@@ -64,7 +64,7 @@ $$
 由线速度和角速度的定义，可以得到
 
 $$
-\lvert \vec{a} \rvert = v \times \omega
+\lvert \vec{a} \rvert = v \omega
 $$
 
 但这只是加速度的大小。观察以下图像：
