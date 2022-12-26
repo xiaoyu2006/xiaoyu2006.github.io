@@ -23,7 +23,7 @@ $$
 
 ![](/files/20220712/2.png)
 
-我们可以在图片中画出$\vec{\triangle v}=\vec{v_{j}'}-\vec{v_{i}'}$。不熟悉向量减法的可以用$\vec{\triangle v}+\vec{v_{i}'}=\vec{v_{j}'}$思考，即$\vec{v_{i}'}$加上一个向量等于$\vec{v_{j}'}$。
+我们可以在图片中画出$\overrightarrow{\triangle v}=\vec{v_{j}'}-\vec{v_{i}'}$。不熟悉向量减法的可以用$\overrightarrow{\triangle v}+\vec{v_{i}'}=\vec{v_{j}'}$思考，即$\vec{v_{i}'}$加上一个向量等于$\vec{v_{j}'}$。
 
 ![](/files/20220712/3.png)
 
@@ -31,7 +31,7 @@ $$
 
 $$
 \frac
-{\lvert \vec{\triangle v} \rvert}
+{\lvert \overrightarrow{\triangle v} \rvert}
 {\lvert \vec{v_{i}'} \rvert} = 
 \frac {BC} {AB} = \frac {BC} {r}
 $$
@@ -40,24 +40,24 @@ $$
 
 $$
 \frac
-{\lvert \vec{\triangle v} \rvert}
+{\lvert \overrightarrow{\triangle v} \rvert}
 {\lvert \vec{v_{i}'} \rvert} = 
 \frac {\overset{\LARGE\frown}{BC}} {r} = 
 \frac {\alpha r} {r} = \alpha
 $$
 
 $$
-\lvert \vec{\triangle v} \rvert = \alpha \lvert \vec{v_{i}'} \rvert = \alpha v
+\lvert \overrightarrow{\triangle v} \rvert = \alpha \lvert \vec{v_{i}'} \rvert = \alpha v
 $$
 
 ![](/files/20220712/4.png)
 
-将得到的$\lvert \vec{\triangle v} \rvert$代入$\vec{a}$，可以求出瞬时加速度的大小
+将得到的$\lvert \overrightarrow{\triangle v} \rvert$代入$\vec{a}$，可以求出瞬时加速度的大小
 
 $$
 \lvert \vec{a} \rvert = 
 \lvert \frac{\vec{v_{j}}-\vec{v_{i}}}{t} \rvert = 
-\frac{\lvert \vec{\triangle v} \rvert}{t} =
+\frac{\lvert \overrightarrow{\triangle v} \rvert}{t} =
 \frac{\alpha v}{t}
 $$
 
@@ -72,5 +72,5 @@ $$
 ![](/files/20220712/5.png)
 
 
-易得当$t \rightarrow 0$时$\alpha_{1} \rightarrow 0$，此时$\vec{\triangle v}$与圆的切线垂直，即$\vec{a}$朝向圆心。
+易得当$t \rightarrow 0$时$\alpha_{1} \rightarrow 0$，此时$\overrightarrow{\triangle v}$与圆的切线垂直，即$\vec{a}$朝向圆心。
 
