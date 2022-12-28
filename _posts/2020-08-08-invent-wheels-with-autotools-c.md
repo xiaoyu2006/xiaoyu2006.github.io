@@ -1,25 +1,10 @@
 ---
-layout: post
-title:  "Invent wheels with Autotools & C"
-date:   2020-08-08 22:00:00 +0800
-tags: programming
+title: "Invent wheels with Autotools & C"
+date: 2020-08-08 22:00:00 +0800
+tags: [programming]
 ---
 
 This how-to guide will teach you how to invent wheels with Autotools & C. Note that it isn't detailed, just to give you some ideas how the whole system works.
-# TOC
-
-- [TOC](#toc)
-- [Introduction](#introduction)
-  - [Requirements](#requirements)
-  - [Product](#product)
-- [Procedures](#procedures)
-  - [A simple lib](#a-simple-lib)
-  - [Autotools](#autotools)
-    - [`configure.ac`](#configureac)
-    - [`Makefile.am`](#makefileam)
-    - [Tests](#tests)
-    - [configure & build](#configure--build)
-  - [Product](#product-1)
 
 # Introduction
 
