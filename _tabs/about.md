@@ -13,7 +13,7 @@ I'm Yi, a student who likes to mess around with code. Currenting studying in NFL
 
 ## Find me
 
- - Mail: [caoyi06@qq.com](mailto:caoyi06@qq.com)
+ - Mail: [me@ycao.top](mailto:me@ycao.top)
  - GitHub: [@xiaoyu2006](https://github.com/xiaoyu2006)
  - Stack Overflow: [@xiaoyu2006](https://stackoverflow.com/users/10811334/xiaoyu2006)
  - 500px: [@xiaoyu2006](https://500px.com/p/xiaoyu2006)
