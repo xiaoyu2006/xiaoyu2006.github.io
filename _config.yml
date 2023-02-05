@@ -21,7 +21,7 @@
 theme: jekyll-theme-chirpy
 
 title: Yi's Blog
-email: caoyi06@qq.com
+email: me@ycao.top
 tagline: >- # this means to ignore newlines until "baseurl:"
   Welcome to Yi's blog, licensed under CC BY-SA 4.0.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -34,7 +34,7 @@ github:
   
 social:
   name: Yi Cao
-  email: caoyi06@qq.com
+  email: me@ycao.top
   links:
     - https://github.com/xiaoyu2006
     - https://stackoverflow.com/users/10811334/xiaoyu2006
