@@ -6,9 +6,9 @@ tags: [programming]
 
 This how-to guide will teach you how to invent wheels with Autotools & C. Note that it isn't detailed, just to give you some ideas how the whole system works.
 
-# Introduction
+## Introduction
 
-## Requirements
+### Requirements
 
 My Autotools versions are:
 
@@ -18,15 +18,15 @@ My Autotools versions are:
 
 And I'm on OS X. Installation guide will not be included.
 
-## Product
+### Product
 
 We'll make a simple C lib (C++ compatible) called `libts` helps you to get time duration between two function calls.
 
-# Procedures
+## Procedures
 
 Time to actually make something!
 
-## A simple lib
+### A simple lib
 
 Our project starts simply like this, including a header file and a source file:
 
@@ -110,13 +110,13 @@ double getTimeDuration()
 
 Now the source code is done. Let's setup Autotools!
 
-## Autotools
+### Autotools
 
 Autotools is a complicated build system. We have to create several files.
 
 *Note: The following commands are run at the root of the source code.*
 
-### `configure.ac`
+#### `configure.ac`
 
 **`configure.ac` is a file for `Autoconf` to generate an `configure` script. It checks availability (in our example, if `gettimeofday()` and `time()` are available) and generates `Makefile` from `Makefile.in`, which will be generated
 later.**
@@ -250,7 +250,7 @@ And your project will be like this:
 └── ts.h
 ```
 
-### `Makefile.am`
+#### `Makefile.am`
 
 `Makefile.am` is a file for `automake` to generate the `Makefile.in` mentioned above. Now create a `Makefile.am` and write the following stuffs:
 
@@ -272,7 +272,7 @@ libtoolize # Generate supporting files for Libtool
 automake --add-missing
 ```
 
-### Tests
+#### Tests
 
 Tests are always needed. Let's do this in Autotools' way. First create `test.c`:
 
@@ -317,7 +317,7 @@ Also, if you don't want to type the above `aclocal` and stuff again:
 autoreconf -i
 ```
 
-### configure & build
+#### configure & build
 
 Simple! Everything is ready now. Do this as usual:
 
@@ -346,6 +346,6 @@ make dist
 
 Whoa, you did that! To use this lib in your own programs, just `#include <ts.h>` and link this library (`-lts`)!
 
-## Product
+### Product
 
 This demo's distribution can be found [here](/files/20200808/libts-0.1.tar.gz).
