@@ -3,6 +3,13 @@
 -
   type: github
   icon: 'fab fa-github'
+
+-
+  type: stack-overflow
+  icon: 'fab fa-stack-overflow'
+  url:  'https://stackoverflow.com/users/10811334/xiaoyu2006'
+
+
 # -
 #   type: twitter
 #   icon: 'fab fa-twitter'
@@ -24,7 +31,3 @@
 #   type: linkedin
 #   icon: 'fab fa-linkedin'   # icons powered by <https://fontawesome.com/>
 #   url:  ''                  # Fill with your Linkedin homepage
--
-  type: stack-overflow
-  icon: 'fab fa-stack-overflow'
-  url:  'https://stackoverflow.com/users/10811334/xiaoyu2006'

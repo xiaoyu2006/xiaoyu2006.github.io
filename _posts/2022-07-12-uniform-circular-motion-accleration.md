@@ -32,7 +32,7 @@ $$
 $$
 \frac
 {\lvert \overrightarrow{\triangle v} \rvert}
-{\lvert \vec{v_{i}'} \rvert} = 
+{\lvert \vec{v_{i}'} \rvert} =
 \frac {BC} {AB} = \frac {BC} {r}
 $$
 
@@ -41,8 +41,8 @@ $$
 $$
 \frac
 {\lvert \overrightarrow{\triangle v} \rvert}
-{\lvert \vec{v_{i}'} \rvert} = 
-\frac {\overset{\LARGE\frown}{BC}} {r} = 
+{\lvert \vec{v_{i}'} \rvert} =
+\frac {\overset{\LARGE\frown}{BC}} {r} =
 \frac {\alpha r} {r} = \alpha
 $$
 
@@ -55,8 +55,8 @@ $$
 将得到的$\lvert \overrightarrow{\triangle v} \rvert$代入$\vec{a}$，可以求出瞬时加速度的大小
 
 $$
-\lvert \vec{a} \rvert = 
-\lvert \frac{\vec{v_{j}}-\vec{v_{i}}}{t} \rvert = 
+\lvert \vec{a} \rvert =
+\lvert \frac{\vec{v_{j}}-\vec{v_{i}}}{t} \rvert =
 \frac{\lvert \overrightarrow{\triangle v} \rvert}{t} =
 \frac{\alpha v}{t}
 $$
@@ -71,6 +71,4 @@ $$
 
 ![](/files/20220712/5.png)
 
-
 易得当$t \rightarrow 0$时$\alpha_{1} \rightarrow 0$，此时$\overrightarrow{\triangle v}$与圆的切线垂直，即$\vec{a}$朝向圆心。
-

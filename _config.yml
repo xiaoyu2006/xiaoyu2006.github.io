@@ -26,6 +26,7 @@ tagline: >- # this means to ignore newlines until "baseurl:"
   Welcome to Yi's blog, licensed under CC BY-SA 4.0.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://ycao.top" # the base hostname & protocol for your site, e.g. http://example.com
+lang: en
 
 twitter:
   username: xiaoyu2006
@@ -110,7 +111,7 @@ assets:
 pwa:
   enabled: true   # the option for PWA feature
 
-paginate: 5
+paginate: 6
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -136,7 +137,7 @@ defaults:
       type: posts
     values:
       layout: post
-      comments: true    # Enable comments in posts.
+      comments: false   # Enable comments in posts.
       toc: true         # Display TOC column in posts.
       # DO NOT modify the following parameter unless you are confident enough
       # to update the code of all other post links in this project.
@@ -190,4 +191,3 @@ jekyll-archives:
     tag: tag
   permalinks:
     tag: /tags/:name/
-    category: /categories/:name/
