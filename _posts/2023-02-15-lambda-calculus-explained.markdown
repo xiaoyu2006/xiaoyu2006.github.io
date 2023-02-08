@@ -1,6 +1,6 @@
 ---
 title: "Lambda Calculus Explained"
-date: 2023-02-15 20:00:00 +0800
+date: 2023-02-08 20:00:00 +0800
 tags: [programming, math]
 math: true
 ---
@@ -27,13 +27,13 @@ lambda x : x
 
 Much more intuitive now! It simply outputs whatever is inputed.
 
-It can be applied to another expression by simply writing the expresstion after the function:
+It can be applied to another expression by writing the expresstion after the function:
 
 $$
 (\lambda x.x) y
 $$
 
-And it simply resolves into $y$. We'll cover the details later.
+And it resolves into $y$. We'll cover the details later.
 
 This is one of the so-called *lambda expressions*. There are three kinds of lambda expressions:
 
@@ -114,7 +114,11 @@ $$
 \mathbf{S} = \lambda wyx.y(wyx)
 $$
 
-Another really weird function huh? Let's apply our $0$ to it:
+Another really weird function huh? 
+
+TODO
+
+Let's apply our $0$ to it:
 
 $$
 \begin{align}
@@ -128,7 +132,7 @@ $$
 \end{align}
 $$
 
-Compared with $0$, $z$ is quoted in $1$.
+Compared with $0$, $z$ is quoted by $s$ in $1$.
 
 How about $2$? Try it out:
 
@@ -136,4 +140,4 @@ $$
 \mathbf{S} 1 = (\lambda wyx.y(wyx))\lambda yx.y(x) = \lambda yx.y((\lambda sz.s(z))yx) = \lambda yx.y(y(x)) = \lambda sz.s(s(z)) = 2
 $$
 
-Every time $\mathbf{S}$ is applied, the 
+Every time $\mathbf{S}$ is applied, the nesting goes deeper.
