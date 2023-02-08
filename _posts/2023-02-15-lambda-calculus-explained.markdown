@@ -1,6 +1,6 @@
 ---
 title: "Lambda Calculus Explained"
-date: 2023-02-08 20:00:00 +0800
+date: 2023-02-15 20:00:00 +0800
 tags: [programming, math]
 math: true
 ---
@@ -63,9 +63,9 @@ $$
 \begin{align}
 & (\lambda xy.xyx)ab \\
 & = (((\lambda x . \lambda y . xyx)) a ) b \\
-& = ({\colorbox{yellow}{[a/x]}} (\lambda y . {\colorbox{yellow}{x}} y {\colorbox{yellow}{x}})) b \\
-& = (\lambda y . {\colorbox{yellow}{a}}y{\colorbox{yellow}{a}}) b \\
-& = {\colorbox{yellow}{[b/y]}} a{\colorbox{yellow}{y}}a = a{\colorbox{yellow}{b}}a
+& = ({\colorbox{yellow}{$[a/x]$}} (\lambda y . {\colorbox{yellow}{$x$}} y {\colorbox{yellow}{$x$}})) b \\
+& = (\lambda y . {\colorbox{yellow}{$a$}}y{\colorbox{yellow}{$a$}}) b \\
+& = {\colorbox{yellow}{$[b/y]$}} a{\colorbox{yellow}{$y$}}a = a{\colorbox{yellow}{$b$}}a
 \end{align}
 $$
 
@@ -125,8 +125,8 @@ $$
 & \mathbf{S} 0 \\
 & = \mathbf{S} (\lambda sz.z) \\
 & = (\lambda wyx.y(wyx))(\lambda sz.z) \\
-& = {\colorbox{yellow}{[\lambda sz.z / w]}} \lambda yx.y({\colorbox{yellow}{w}}yx) \\
-& = \lambda yx.y({\colorbox{yellow}{(\lambda sz.z)}} yx) \\
+& = {\colorbox{yellow}{$[\lambda sz.z / w]$}} \lambda yx.y({\colorbox{yellow}{$w$}} yx) \\
+& = \lambda yx.y({\colorbox{yellow}{$(\lambda sz.z)$}} yx) \\
 & = \lambda yx.y((\lambda z.z) x) \\
 & = \lambda yx.y(x) = \lambda sz.s(z) = 1
 \end{align}
