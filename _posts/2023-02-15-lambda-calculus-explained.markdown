@@ -13,7 +13,7 @@ In the world of calculation, the most simple thing might be a Turing machine, a 
 
 ## Notation System
 
-*I've used it!* you may think. Correct! Lambda calculus is the fundamental building blocks in Functional Programming language. It's extremely likely to meet it in most modern programming languages, for example Python, JavaScript and even OO languages such as [C++](https://stackoverflow.com/questions/48210733/link-between-lambda-calculus-and-lambda-expressions-in-c) and Java. Let's take a look at a simple lambda expression:
+*I've used it!* you may think. Correct! Lambda calculus is the fundamental building blocks in Functional Programming language. It's extremely likely to meet it in most modern programming languages, for example Python, JavaScript and even OO languages such as [C++](https://stackoverflow.com/questions/48210733/link-between-lambda-calculus-and-lambda-expressions-in-c) and Java. Let's take a look at an example:
 
 $$
 \lambda x . x
@@ -25,7 +25,17 @@ A little bit confused huh? Let's write it in python:
 lambda x : x
 ```
 
-Much more intuitive now! It simply outputs whatever is inputed. This is one of the so-called *lambda expressions*. There are three kinds of lambda expressions:
+Much more intuitive now! It simply outputs whatever is inputed.
+
+It can be applied to another expression by simply writing the expresstion after the function:
+
+$$
+(\lambda x.x) y
+$$
+
+And it simply resolves into $y$. We'll cover the details later.
+
+This is one of the so-called *lambda expressions*. There are three kinds of lambda expressions:
 
 - Name: just a trivial name representing anything. e.g. $x$
 - Abstraction: $\lambda param . body$, where $param$ is a name and body is the substitution rule. e.g. $\lambda xy.xyx$ (which is in infact an abbreviation of $\lambda x.\lambda y.xyx$)
@@ -53,9 +63,9 @@ $$
 \begin{align}
 & (\lambda xy.xyx)ab \\
 & = (((\lambda x . \lambda y . xyx)) a ) b \\
-& = ({\color{yellow}{[a/x]}} (\lambda y . {\color{yellow}{x}} y {\color{yellow}{x}})) b \\
-& = (\lambda y . {\color{yellow}{a}}y{\color{yellow}{a}}) b \\
-& = {\color{yellow}{[b/y]}} a{\color{yellow}{y}}a = a{\color{yellow}{b}}a
+& = ({\colorbox{yellow}{[a/x]}} (\lambda y . {\colorbox{yellow}{x}} y {\colorbox{yellow}{x}})) b \\
+& = (\lambda y . {\colorbox{yellow}{a}}y{\colorbox{yellow}{a}}) b \\
+& = {\colorbox{yellow}{[b/y]}} a{\colorbox{yellow}{y}}a = a{\colorbox{yellow}{b}}a
 \end{align}
 $$
 
@@ -111,8 +121,8 @@ $$
 & \mathbf{S} 0 \\
 & = \mathbf{S} (\lambda sz.z) \\
 & = (\lambda wyx.y(wyx))(\lambda sz.z) \\
-& = {\color{yellow}{[\lambda sz.z / w]}} \lambda yx.y({\color{yellow}{w}}yx) \\
-& = \lambda yx.y({\color{yellow}{(\lambda sz.z)}} yx) \\
+& = {\colorbox{yellow}{[\lambda sz.z / w]}} \lambda yx.y({\colorbox{yellow}{w}}yx) \\
+& = \lambda yx.y({\colorbox{yellow}{(\lambda sz.z)}} yx) \\
 & = \lambda yx.y((\lambda z.z) x) \\
 & = \lambda yx.y(x) = \lambda sz.s(z) = 1
 \end{align}
