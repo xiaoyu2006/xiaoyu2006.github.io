@@ -19,7 +19,7 @@ $$
 \lambda x . x
 $$
 
-A little bit confused huh? Let's write it in python:
+A little bit confused huh? Let's write it in Python:
 
 ```python
 lambda x: x
@@ -41,7 +41,7 @@ This is one of the so-called *lambda expressions*. There are three kinds of lamb
 - Abstraction: $\lambda param . body$, where $param$ is a name and body is the substitution rule. e.g. $\lambda xy.xyx$ (which is in infact an abbreviation of $\lambda x.\lambda y.xyx$)
 - Application: a list of expressions. e.g. $(\lambda xz.xxz)ij$
 
-You can check out the formal definition at [Wikipedia](https://en.wikipedia.org/wiki/Lambda_calculus#Formal_definition). It's totally fine to treat the lambda expression notation system as a minimal programming language whose keywords are only $.(dot)$ and $\lambda$. There are also optional quotes in lambda expressions. Without quotes we phrase the expression from left to right.
+You can check out the formal definition at [Wikipedia](https://en.wikipedia.org/wiki/Lambda_calculus#Formal_definition). It's totally fine to treat the lambda expression notation system as a minimal programming language whose keywords are only $.$ (dot) and $\lambda$ (lambda). There are also optional quotes in lambda expressions. Without quotes we phrase the expression from left to right.
 
 In an abstraction, or function, there're two types of variables: *bounded* and *free* variables. A variable is *bounded* means it appears in the "params" section and *free* is the opposite. This is similar to local and global variables. For example in $(\lambda x.xy)$, $x$ is bounded and $y$ is free.
 
@@ -111,7 +111,7 @@ The input $a$ is thrown away, leaving only $\lambda z.z$ which is called a "iden
 
 ### Successor
 
-One approach to this is to define a "successor operation", which basically returns the number that is one greater than the input. It goes as follows (yes we are giving it a name since it's quote common):
+One approach to this is to define a "successor operation", which basically returns the number that is one greater than the input. It goes as follows (yes we are giving it a name since it's quite common):
 
 $$
 \mathbf{S} = \lambda wyx.y(wyx)
@@ -192,7 +192,7 @@ $$
 \end{align}
 $$
 
-It's resolved into a function with $2$ successor operations! Now it's triviald calculate $2+3$ using it:
+It's resolved into a function with $2$ successor operations! Now it's trivial to calculate $2+3$ using it:
 
 $$
 2\mathbf{S}3 = \mathbf{S}\mathbf{S}3 = \mathbf{S}4 = 5
@@ -208,7 +208,7 @@ $$
 \mathbf{M} = \lambda xyz.x(yz)
 $$
 
-It "unwraps" $y$ and apply the repeated sequence to x, say $2 \times 3$:
+It "unwraps" $y$ and apply the repeated sequence to $x$, say $2 \times 3$:
 
 $$
 \begin{align}
