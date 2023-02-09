@@ -1,6 +1,6 @@
 ---
-title: "Lambda Calculus Explained"
-date: 2023-02-15 20:00:00 +0800
+title: "An Introduction to Lambda Calculus"
+date: 2023-02-09 22:00:00 +0800
 tags: [programming, math]
 math: true
 ---
@@ -22,7 +22,7 @@ $$
 A little bit confused huh? Let's write it in python:
 
 ```python
-lambda x : x
+lambda x: x
 ```
 
 Much more intuitive now! It simply outputs whatever is inputed.
@@ -60,23 +60,24 @@ $$
 The $[a/b]$ mark simply means substituting $b$ with $a$. Now try a more complex one:
 
 $$
+\newcommand{\highlight}[1]{ { \colorbox{yellow}{$\color{black}#1$} } }
 \begin{align}
 & (\lambda xy.xyx)ab \\
 & = (((\lambda x . \lambda y . xyx)) a ) b \\
-& = ({\colorbox{yellow}{$[a/x]$}} (\lambda y . {\colorbox{yellow}{$x$}} y {\colorbox{yellow}{$x$}})) b \\
-& = (\lambda y . {\colorbox{yellow}{$a$}}y{\colorbox{yellow}{$a$}}) b \\
-& = {\colorbox{yellow}{$[b/y]$}} a{\colorbox{yellow}{$y$}}a = a{\colorbox{yellow}{$b$}}a
+& = (\highlight{[a/x]} (\lambda y . \highlight{x} y \highlight{x})) b \\
+& = (\lambda y . \highlight{a} y \highlight{a}) b \\
+& = \highlight{[b/y]} a \highlight{y} a = a \highlight{b} a
 \end{align}
 $$
 
 Still confused? Try it out in Python.
 
 ```python
-(lambda x : (lambda y : x + y + x)) ('a') ('b')
+(lambda x: (lambda y: x + y + x))('a')('b')
 # => 'aba'
 ```
 
-Of course no one will write such horrible program. Let's try naming it (however real lambda functions are never given names):
+Of course no one will write such horrible program. Let's try naming it (however few real lambda functions are given names):
 
 ```python
 def l1(x):
@@ -100,44 +101,135 @@ $$
 \lambda sz.z
 $$
 
-Try it out:
+And yes! $0$ is a function! Try it out:
 
 $$
-(\lambda sz.z) a = (\lambda s(\lambda z.z)) a = [a/s](\lambda z.z) = \lambda z.z
+(\lambda sz.z) a = (\lambda s . (\lambda z.z)) a = [a/s](\lambda z.z) = \lambda z.z
 $$
 
 The input $a$ is thrown away, leaving only $\lambda z.z$ which is called a "identity function". There're also many other ways defining $0$, but there are [good reasons](https://stackoverflow.com/a/1485145/10811334) using this. Just keep going by defining $1, 2, ...$ and all the natural numbers.
 
-Now one approach to this is to define a "successor operation", which basically returns the number that is one greater than the input. It goes as follows (yes we are giving it a name since it's quote common):
+### Successor
+
+One approach to this is to define a "successor operation", which basically returns the number that is one greater than the input. It goes as follows (yes we are giving it a name since it's quote common):
 
 $$
 \mathbf{S} = \lambda wyx.y(wyx)
 $$
 
-Another really weird function huh? 
+Actually I prefer the form of:
 
-TODO
+$$
+\mathbf{S} = \lambda w . (\lambda yx.y(wyx))
+$$
 
-Let's apply our $0$ to it:
+Apply our $0$ to it:
 
 $$
 \begin{align}
 & \mathbf{S} 0 \\
 & = \mathbf{S} (\lambda sz.z) \\
 & = (\lambda wyx.y(wyx))(\lambda sz.z) \\
-& = {\colorbox{yellow}{$[\lambda sz.z / w]$}} \lambda yx.y({\colorbox{yellow}{$w$}} yx) \\
-& = \lambda yx.y({\colorbox{yellow}{$(\lambda sz.z)$}} yx) \\
+& = \highlight{[\lambda sz.z / w]} (\lambda yx.y(\highlight{w} y x)) \\
+& = \lambda yx.y(\highlight{(\lambda sz.z)} yx) \\
 & = \lambda yx.y((\lambda z.z) x) \\
 & = \lambda yx.y(x) = \lambda sz.s(z) = 1
 \end{align}
 $$
 
-Compared with $0$, $z$ is quoted by $s$ in $1$.
+Another really weird function huh? Compared with $0$, $z$ is quoted by $s$ in $1$ and that's how we encode out natural numbers. Recall that this is not the only way to encode natural numbers, but we find defining calculations for it much eaiser (covered later). Rewrite it in Python if you are still confused:
 
-How about $2$? Try it out:
+```python
+def zero(s):
+    return lambda z: z
+
+
+def S(w):
+    # Define function "inner" for the sake of less nasty lambda nesting.
+    def inner(y):
+        # We know that w is a function, hence we're going to call it instead of join (+) it.
+        return lambda x: y + w(y)(x)
+    return inner
+```
+
+Since $w$ is always in the form of $\lambda sz.s(s(s( ... (z))))$, by calling $w$ using $(wyx)$ we "unwrap" the head of $w$ and "de-function" it. The $y$ at the head of $\highlight{y}(wyx)$ adds another layer of nesting.
+
+Now you have an idea what it is doing. Now try to get $2$:
 
 $$
-\mathbf{S} 1 = (\lambda wyx.y(wyx))\lambda yx.y(x) = \lambda yx.y((\lambda sz.s(z))yx) = \lambda yx.y(y(x)) = \lambda sz.s(s(z)) = 2
+\begin{align}
+& \mathbf{S} 1 = (\lambda \highlight{w}yx.y(\highlight{w}yx))\highlight{(\lambda yx.y(x))} \\
+& = \lambda yx.y(\highlight{(\lambda sz.s(z))}yx) \\
+& = \lambda yx.y(y(x)) \\
+& = \lambda sz.s(s(z)) = 2
+\end{align}
 $$
 
-Every time $\mathbf{S}$ is applied, the nesting goes deeper.
+Note that we have renamed the variables for clarity.
+
+Each time $\mathbf{S}$ is applied, the nesting goes deeper. We can even test it in Python!
+
+```python
+zero('s')('z')
+# => 'z'
+one = S(zero)
+one('s')('z')
+# => 'sz'
+two = S(one)
+two('s')('z')
+# => 'ssz'
+```
+
+### Addition
+
+Addition can also be achieved by the successor function. Write a number before $\mathbf{S}$:
+
+$$
+\begin{align}
+& 2\mathbf{S} \\
+& = (\lambda s . \lambda z . s (s(z))) \mathbf{S} \\
+& = \lambda z.\mathbf{S}(\mathbf{S}(z))
+\end{align}
+$$
+
+It's resolved into a function with $2$ successor operations! Now it's triviald calculate $2+3$ using it:
+
+$$
+2\mathbf{S}3 = \mathbf{S}\mathbf{S}3 = \mathbf{S}4 = 5
+$$
+
+Numbers defined in a recursive way make this operation a breeze.
+
+### Multiplication
+
+Multiplication is also made easy by the defination of numbers.
+
+$$
+\mathbf{M} = \lambda xyz.x(yz)
+$$
+
+It "unwraps" $y$ and apply the repeated sequence to x, say $2 \times 3$:
+
+$$
+\begin{align}
+& (\mathbf{M}2)3 = (\lambda xyz.x(yz)2)3 \\
+& = \lambda z.2(3z) \\
+& = \lambda z.(\lambda uw . u(u(w)))((\lambda ij.i(i(i(j))))z) \\
+& = \lambda z.(\lambda uw . u(u(w)))(\lambda j.z(z(z(j)))) \\
+& = \lambda z.(\lambda w . \highlight{\lambda j.z(z(z(j)))}(\highlight{\lambda j.z(z(z(j)))}(w))) \\
+& = \lambda z.(\lambda w . z(z(z(z(z(z(w))))))) \\
+& = \lambda z.\lambda s . z(z(z(z(z(z(s)))))) = 6 \\
+\end{align}
+$$
+
+Whoa *quotes*! But trust me it's doing the right thing.
+
+## Further Reading
+
+Lambda Calculus is a simple yet powerful system and there's still a lot to learn. You can:
+
+- Try to create more arithmetic operations using the lambda system.
+- Check out [Wikipedia](https://en.wikipedia.org/wiki/Lambda_calculus) for a more systematic and formal introduction.
+- Try some FP languages such as [Lisp](https://lisp-lang.org/) and [Haskell](https://www.haskell.org/). (After all that's what this is all for!)
+
+Good luck and have fun!
