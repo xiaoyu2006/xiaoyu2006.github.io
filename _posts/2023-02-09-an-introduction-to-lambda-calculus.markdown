@@ -222,7 +222,7 @@ $$
 \end{align}
 $$
 
-Whoa *quotes*! But trust me it's doing the right thing.
+Whoa so many *brackets*! But trust me it's doing the right thing.
 
 ## Further Reading
 
