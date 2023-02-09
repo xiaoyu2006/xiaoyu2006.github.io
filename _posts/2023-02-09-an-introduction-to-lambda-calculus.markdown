@@ -218,7 +218,7 @@ $$
 & = \lambda z.(\lambda uw . u(u(w)))(\lambda j.z(z(z(j)))) \\
 & = \lambda z.(\lambda w . \highlight{\lambda j.z(z(z(j)))}(\highlight{\lambda j.z(z(z(j)))}(w))) \\
 & = \lambda z.(\lambda w . z(z(z(z(z(z(w))))))) \\
-& = \lambda z.\lambda s . z(z(z(z(z(z(s)))))) = 6 \\
+& = \lambda s. \lambda z . s(s(s(s(s(s(z)))))) = 6 \\
 \end{align}
 $$
 
@@ -226,7 +226,7 @@ Whoa *quotes*! But trust me it's doing the right thing.
 
 ## Further Reading
 
-Lambda Calculus is a simple yet powerful system and there's still a lot to learn. You can:
+You should have a rough understanding of Lambda Calculus now. It is a simple yet powerful system and there's still a lot to learn. You can:
 
 - Try to create more arithmetic operations using the lambda system.
 - Check out [Wikipedia](https://en.wikipedia.org/wiki/Lambda_calculus) for a more systematic and formal introduction.
