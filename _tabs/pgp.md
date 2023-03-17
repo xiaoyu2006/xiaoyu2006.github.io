@@ -8,7 +8,7 @@ Key ID: `C9C2FACB49E3D6A5`
 
 Fingerprint: `2F9F DDB1 066D 2AA1 DE45  2F8A C9C2 FACB 49E3 D6A5`
 
-Download public key: [PGP Key](/yi_public.asc)
+Download public key: [ASCII armored asc file](/yi_public.asc)
 
 ```plaintext
 -----BEGIN PGP PUBLIC KEY BLOCK-----
