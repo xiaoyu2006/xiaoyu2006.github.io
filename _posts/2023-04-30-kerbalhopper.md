@@ -44,7 +44,7 @@ $$
 \end{align*}
 $$
 
-Ok it seems that things are getting out of hand. Too many variabled are affecting each other. You wander if there is a better way to do this. And it turns out that this is an engineering question: **You don't have to find an optimal solution, you just need to find a good enough one.**
+Ok it seems that things are getting out of hand. Too many variables are affecting each other. You wonder if there is a better way to do this. And it turns out that this is an engineering question: **You don't have to find an optimal solution, you just need to find a good enough one.**
 
 ## The engineering way
 
