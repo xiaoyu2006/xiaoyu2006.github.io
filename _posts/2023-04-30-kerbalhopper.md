@@ -29,9 +29,9 @@ while the corresponding $F$, $m$ and $a$ are:
 
 $$
 \begin{align*}
-& F = f(t) + mg + \text{drag}(\frac{dx}{dt}) \\
-& m = \text{wet mass} - \text{fuel consumption}(\int_{0}^{t} f(u) du) \\
-& a = \frac{d^2 x}{d t^2}
+& F = f(t) + mg + \text{drag}(\frac{\mathrm{d}x}{\mathrm{d}t}) \\
+& m = \text{wet mass} - \text{fuel consumption}(\int_{0}^{t} f(u) \mathrm{d}u) \\
+& a = \frac{\mathrm{d}^2 x}{\mathrm{d}t^2}
 \end{align*}
 $$
 
@@ -40,7 +40,7 @@ And you want at some time $t_0$:
 $$
 \begin{align*}
 & x = h \\
-& \frac{dx}{dt} = 0
+& \frac{\mathrm{d}x}{\mathrm{d}t} = 0
 \end{align*}
 $$
 
@@ -122,10 +122,10 @@ After a few trials, you find that the craft isn't going anywhere no matter what 
 
 Recall what you do when you're trying to maintain the altitude: When you're approaching the height, you try not to let the ship fly too fast.
 
-How do you describe *not going too fast while approaching*? Yes that's $-\frac{dx}{dt} = \frac{dE}{dt}$. Again, you take the value, snap a content $K_d$ onto it and hope this works.
+How do you describe *not going too fast while approaching*? Yes that's $-\frac{\mathrm{d}x}{\mathrm{d}t} = \frac{\mathrm{d}E}{\mathrm{d}t}$. Again, you take the value, snap a content $K_d$ onto it and hope this works.
 
 $$
-f = K_p E + K_d \frac{dE}{dt}
+f = K_p E + K_d \frac{\mathrm{d}E}{\mathrm{d}t}
 $$
 
 And you implement this in Python:
@@ -191,7 +191,7 @@ $h-x = \frac{mg}{K_p}$, which means that the rocket can never reach target heigh
 You have tried to taking $E$ and $E'$ into account however none of them helped. What will you do if you observe your ship is not going to reach $h$? As time goes by you will gradually become impatient and throttle up. How to measure *yourself losing patience*? Yes that's $\int E dt$! As usual, you snap a constant $K_i$ onto it and hope this works.
 
 $$
-f = K_p E + K_d \frac{dE}{dt} + K_i \int^{t}_{0} E du
+f = K_p E + K_d \frac{\mathrm{d}E}{\mathrm{d}t} + K_i \int^{t}_{0} E \mathrm{d}u
 $$
 
 And you implement this in Python:
@@ -274,6 +274,6 @@ And there you go! Your hard work has paid off. The ship is now floating at $200$
 
 ## Conclusion
 
-It's such a weird method with some nice symmetrical properties. $K_p E$ controls this moment, $K_d \frac{dE}{dt}$ predicts the future and $K_i \int E dt$ reflects the past. You are fascinated by how easy and effective this 28-line of code is. You decide to name it **PID**, taking the first letter of **P**roposal, **I**ntegral and **D**erivative.
+It's such a weird method with some nice symmetrical properties. $K_p E$ controls this moment, $K_d \frac{\mathrm{d}E}{\mathrm{d}t}$ predicts the future and $K_i \int E dt$ reflects the past. You are fascinated by how easy and effective this 28-line of code is. You decide to name it **PID**, taking the first letter of **P**roposal, **I**ntegral and **D**erivative.
 
 ...and you find out frustratingly that it was invented in 1940s. There's even a [Wikipedia page](https://en.wikipedia.org/wiki/PID_controller) for it.
