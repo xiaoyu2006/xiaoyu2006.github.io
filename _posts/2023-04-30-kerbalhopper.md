@@ -28,20 +28,20 @@ $$
 while the corresponding $F$, $m$ and $a$ are:
 
 $$
-\begin{align}
-F = f(t) + mg + \text{drag}(\frac{dx}{dt}) \\
-m = \text{wet mass} - \text{fuel consumption}(\int_{0}^{t} f(u) du) \\
-a = \frac{d^2 x}{d t^2}
-\end{align}
+\begin{align*}
+& F = f(t) + mg + \text{drag}(\frac{dx}{dt}) \\
+& m = \text{wet mass} - \text{fuel consumption}(\int_{0}^{t} f(u) du) \\
+& a = \frac{d^2 x}{d t^2}
+\end{align*}
 $$
 
 And you want at some time $t_0$:
 
 $$
-\begin{align}
-x = h \\
-\frac{dx}{dt} = 0
-\end{align}
+\begin{align*}
+& x = h \\
+& \frac{dx}{dt} = 0
+\end{align*}
 $$
 
 Ok it seems that things are getting out of hand. Too many variabled are affecting each other. You wander if there is a better way to do this. And it turns out that this is an engineering question: **You don't have to find an optimal solution, you just need to find a good enough one.**
@@ -177,11 +177,11 @@ The method is working! The ship now tends to keep its throttle in an appropriate
 However, the ship stuck at somewhere beneath $200$. You pick up a pen and try to figure out where it reaches the balance, that is $\text{thrust}=\text{gravity}$:
 
 $$
-\begin{align}
+\begin{align*}
 f = mg \\
 K_p (h-x) + 0 = mg \\
 x = -\frac{mg}{K_p} + h
-\end{align}
+\end{align*}
 $$
 
 $h-x = \frac{mg}{K_p}$, which means that the rocket can never reach target height $h$!
