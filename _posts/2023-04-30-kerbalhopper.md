@@ -188,7 +188,7 @@ $h-x = \frac{mg}{K_p}$, which means that the rocket can never reach target heigh
 
 ### I
 
-You have tried to taking $E$ and $E'$ into account however none of them helped. What will you do if you observe your ship is not going to reach $h$? As time goes by you will gradually become impatient and throttle up. How to measure *yourself losing patience*? Yes that's $\int E dt$! As usual, you snap a constant $K_i$ onto it and hope this works.
+You have tried to taking $E$ and $E'$ into account however none of them helped. What will you do if you observe your ship is not going to reach $h$? As time goes by you will gradually become impatient and throttle up. How to measure *yourself losing patience*? Yes that's $\int E \mathrm{d}t$! As usual, you snap a constant $K_i$ onto it and hope this works.
 
 $$
 f = K_p E + K_d \frac{\mathrm{d}E}{\mathrm{d}t} + K_i \int^{t}_{0} E \mathrm{d}u
