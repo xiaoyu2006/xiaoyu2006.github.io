@@ -277,3 +277,5 @@ And there you go! Your hard work has paid off. The ship is now floating at $200$
 It's such a weird method with some nice symmetrical properties. $K_p E$ controls this moment, $K_d \frac{\mathrm{d}E}{\mathrm{d}t}$ predicts the future and $K_i \int E \mathrm{d}t$ reflects the past. You are fascinated by how easy and effective this 28-line of code is. You decide to name it **PID**, taking the first letter of **P**roposal, **I**ntegral and **D**erivative.
 
 ...and you find out frustratingly that it was invented in 1940s. There's even a [Wikipedia page](https://en.wikipedia.org/wiki/PID_controller) for it.
+
+**Source code of this article can be found [here](https://github.com/xiaoyu2006/simple-kerbalhopper).**
