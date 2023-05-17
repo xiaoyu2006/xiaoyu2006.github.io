@@ -48,7 +48,7 @@ Ok it seems that things are getting out of hand. Too many variables are affectin
 
 ## The engineering way
 
-Time to be creative! 
+Time to be creative!
 
 ### P
 
@@ -274,7 +274,7 @@ And there you go! Your hard work has paid off. The ship is now floating at $200$
 
 ## Conclusion
 
-It's such a weird method with some nice symmetrical properties. $K_p E$ controls this moment, $K_d \frac{\mathrm{d}E}{\mathrm{d}t}$ predicts the future and $K_i \int E \mathrm{d}t$ reflects the past. You are fascinated by how easy and effective this 28-line of code is. You decide to name it **PID**, taking the first letter of **P**roposal, **I**ntegral and **D**erivative.
+It's such a weird method with some nice symmetrical properties. $K_p E$ controls this moment, $K_d \frac{\mathrm{d}E}{\mathrm{d}t}$ predicts the future and $K_i \int E \mathrm{d}t$ reflects the past. You are fascinated by how easy and effective this 28-line of code is - it made no assumptions with the system you are interacting. The same laws still make sense on Duna and Eve. You decide to name it **PID**, taking the first letter of **P**roposal, **I**ntegral and **D**erivative.
 
 ...and you find out frustratingly that it was invented in 1940s. There's even a [Wikipedia page](https://en.wikipedia.org/wiki/PID_controller) for it.
 
