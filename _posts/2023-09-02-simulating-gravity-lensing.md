@@ -1,5 +1,5 @@
 ---
-title: "Simulating Gravity Lensing"
+title: "Simulating Gravitational Lensing"
 date: 2023-09-03 12:00:00 +0800
 tags: [programming, physics]
 math: true
