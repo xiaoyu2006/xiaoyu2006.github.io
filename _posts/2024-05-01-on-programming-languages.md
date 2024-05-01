@@ -38,3 +38,5 @@ It defines a macro that expands to `(* 5 5)`, at compile time. One thing that is
 Indeed, a compiler, by its definition, does calculation at compile time. What LISP provides can be seen as a well-designed, modular compiler framework. It blurs the line between a language and the tech behind a language. I think we can happily reaches the conclusion that by creating languages, we are creating new ways of abstracting datas and procedures that fits our needs. PLs will just keep evolving. It's not a proven fact, it's some kind of art created by humans.
 
 ![GPT is really fond of LISP](/files/20240501/whackygpt.png)
+
+And it also turns out that even GPT is fond of LISP, so you'd better check it out.
