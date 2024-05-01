@@ -24,14 +24,26 @@ Indeed. Our poor little brains (except [theirs](https://en.wikipedia.org/wiki/Li
 Abstractions are great, but (in terms of software engineering) when it comes to abstraction there's no underlying metaphysics implications (thank god) nor formal definitions. It's about doing whatever the cuss a developer would like to. In Golang you have `interface`, in C you have functions, in C++ you have `class`, in Haskell you have functions all over the place. For [the expression problems](https://en.wikipedia.org/wiki/Expression_problem) some choose to dispatch methods vertically while some do it horizontally. Types are not primitives but abstractions too. Everything is just bits and bytes, interpreting a IEEE double as a short won't cause any fundamental troubles, and sometimes we do it intentionally. Types present because most of the time we want to keep it consistant. All of these are evidences that abstraction is largely ruled by relativism. That's where LISP comes into place. It, again I'd like to elaborate, abstracts abstraction, by using macros. Consider the following program:
 
 ```scheme
-(define-syntax square
+(define-syntax unless
   (syntax-rules ()
-    ((_ x) (* x x))))
+    ((_ condition body ...)
+     (if (not condition) (begin body ...)))))
 
-(square 5)
+(unless (= x 0)
+  (display "x is not zero")
+  (newline))
 ```
 
-It defines a macro that expands to `(* 5 5)`, at compile time. One thing that is truely great about LISP macros is that you can do arbitrary computation at compile time. For example, for C++ guys who love classes, there exists CLOS (Common Lisp Object System) that is written in LISP itself, without going into your indeed-turing-complete-but-all-cluttered-together-only-god-can-understand-CPP-templating-nonsense.
+It defines a macro that expands to
+
+```scheme
+(if (not (= x 0))
+    (begin
+      (display "x is not zero")
+      (newline)))
+```
+
+at compile time. One thing that is truely great about LISP macros is that you can do arbitrary computation at compile time. For example, for C++ guys who love classes, there exists CLOS (Common Lisp Object System) that is written in LISP itself, without going into your indeed-turing-complete-but-all-cluttered-together-only-god-can-understand-CPP-templating-nonsense.
 
 ## Don't you play tricks on me
 
