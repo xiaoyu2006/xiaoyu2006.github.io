@@ -1,2 +1,1 @@
-# [ycao.top](https://ycao.top/)
-
+# [ycao.net](https://ycao.net/)
