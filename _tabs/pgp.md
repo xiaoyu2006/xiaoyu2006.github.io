@@ -1,7 +1,7 @@
 ---
 icon: fas fa-lock
 order: 5
-title: PGP Key Infomation
+title: PGP Key
 ---
 
 Email: [yi@ycao.net](mailto:yi@ycao.net)
