@@ -29,7 +29,7 @@ An analytical solution might exist but it is too complicated to be useful when i
 
 Instead, we can use a numerical method to solve this equation. The movement of the particle can be calculated in a discrete manner. For each time step $\Delta t$, the model checks if the segment $x(t) \rightarrow x(t+\Delta t)$ bumps into any visible object. If so, the model stops the particle at the point of collision and paints the pixel with the color of the object.
 
-Although the method seems dumb, it actually completes calculation in reasonable time. You can find my implementation [glens at GitHub](https://github.com/xiaoyu2006/glens). The software is developed in Rust and outputs images in PPM format.
+Although the method seems dumb, it actually completes calculation in reasonable time. You can find my implementation [glens at GitHub](https://github.com/yikerman/glens). The software is developed in Rust and outputs images in PPM format.
 
 With a bit of scripting (or meta-scripting?) even videos can be generated.
 

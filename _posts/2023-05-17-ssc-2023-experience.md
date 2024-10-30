@@ -13,7 +13,7 @@ From the very first moment I have decided to make some educational apps since I 
 2. Introduce signal processing from why some people sing better than others.
 3. Introduce the Iterated Function System to show that Math can be fun and beautiful.
 
-And at last I chose the third one since it's the most approachable one and time is quite limited to me. It's also because I have made a small app [QIFS](https://github.com/xiaoyu2006/QIFS) about this concept. (However the code base is messy and unmaintained.)
+And at last I chose the third one since it's the most approachable one and time is quite limited to me. It's also because I have made a small app [QIFS](https://github.com/yikerman/QIFS) about this concept. (However the code base is messy and unmaintained.)
 
 ## IFS
 
@@ -101,7 +101,7 @@ The final image can also be zoomed in so that users can see the self-similarity 
 
 ![Zoom in](/files/20230517/ren-zoom.png)
 
-And that's it! The app is finished. You can find the source code [here](https://github.com/xiaoyu2006/IFS).
+And that's it! The app is finished. You can find the source code [here](https://github.com/yikerman/IFS).
 
 ## Results
 

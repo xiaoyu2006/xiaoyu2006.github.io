@@ -278,4 +278,4 @@ It's such a weird method with some nice symmetrical properties. $K_p E$ controls
 
 ...and you find out frustratingly that it was invented in 1940s. There's even a [Wikipedia page](https://en.wikipedia.org/wiki/PID_controller) for it.
 
-**Source code of this article can be found [here](https://github.com/xiaoyu2006/simple-kerbalhopper).**
+**Source code of this article can be found [here](https://github.com/yikerman/simple-kerbalhopper).**

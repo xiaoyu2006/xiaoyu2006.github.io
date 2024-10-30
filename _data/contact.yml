@@ -3,6 +3,7 @@
 -
   type: github
   icon: 'fab fa-github'
+  url: 'https://github.com/yikerman'
 
 -
   type: stack-overflow
